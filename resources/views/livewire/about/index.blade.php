@@ -101,13 +101,10 @@
     @endif
 
     <div class="content-window">
-        <div class="content-window-header">{{ __('O bakalářské práci') }}</div>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur sint doloribus corrupti totam itaque quo obcaecati, rerum nesciunt maxime blanditiis molestias reprehenderit aperiam alias? Commodi tempore quisquam optio molestias accusantium.
-    </div>
-
-    <div class="content-window">
         <div class="content-window-header">{{ __('O aplikaci') }}: {{ __('Automatizované řízení vytápění rodinného domu') }}</div>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur sint doloribus corrupti totam itaque quo obcaecati, rerum nesciunt maxime blanditiis molestias reprehenderit aperiam alias? Commodi tempore quisquam optio molestias accusantium.
+        <p>Webová aplikace ovládá vytápění v rodinném domě pomocí jednotek založených na čipech ESP8266 a ESP32 zpravidla přes URL dotazy prostřednictvím HTTPS protokolu, které zařízení odesílájí na webovou doménu, kde je tato aplikace na instalována.</p>
+        <p>Aplikace umožňuje správu uživatelů a jednotlivých místností, zobrazuje hostorii měřených teplot a umoňuje přidělení oprávnění jednotlivým uživatelům.</p>
+        <p>Celá práce je dostupná na webové stránce <a class="link" href="https://www.vut.cz/studenti/zav-prace/detail/151076" target="_blank">závěrečných prací</a> VUT v Brně.</p>
     </div>
 
     @if ($this->modalItem)

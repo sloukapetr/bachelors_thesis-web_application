@@ -1,8 +1,8 @@
 {
     "name": "sloukapetr/bachelors_thesis-web_application",
     "type": "project",
-    "description": "The bachelor's thesis web application on the FEEC BUT.",
-    "keywords": ["automation", "home", "heating"],
+    "description": "The web application of bachelor's thesis on the FEEC BUT.",
+    "keywords": ["automation", "home", "heating", "arduino", "laravel"],
     "version": "1.0.0",
     "license": "MIT",
     "authors": [

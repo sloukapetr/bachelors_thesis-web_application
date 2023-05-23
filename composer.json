@@ -3,7 +3,6 @@
     "type": "project",
     "description": "The web application of bachelor's thesis on the FEEC BUT.",
     "keywords": ["automation", "home", "heating", "arduino", "laravel"],
-    "version": "1.0.0",
     "license": "MIT",
     "authors": [
         {

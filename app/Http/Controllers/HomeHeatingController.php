@@ -65,7 +65,8 @@ class HomeHeatingController extends Controller
                         http_response_code(200);
                         //return "200 Data OK!";
                     } else {
-                        abort(500);
+                        //abort(500);
+                        http_response_code(201);
                     }
                 } else {
                     abort(500);

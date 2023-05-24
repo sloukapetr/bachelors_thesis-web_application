@@ -97,6 +97,33 @@
 
             </table>
         </div>
+        <div class="content-window-header mt-5">{{ __('Vzorové URL dotazy') }}</div>
+        <p>{{ __('Pozor, pokud existuje místnost s příslušným ID jako v URL dotazu, je možné, že dojde k nechtěnému nahrání dat, pak je nutný přímý zásah do databáze.') }}</p>
+        <p>Klíč aplikace je nutný pro ověření oprávnění. Jedná se o "app_key" z tabulky výše.</p>
+        <h3 class="text-md">Odeslání dat ze snímače teploty</h3>
+        <p>ID místnosti odpovídá ID místnosti z karty místnosti, následuje hodnota teploty a vlhkosti.</p>
+        <div>
+            {{ route('home-heating.sensor-publish', ['app_key' => 'klic_aplikace', 'room_id' => "id_mistnosti", 'temp' => 'teplota', 'humidity' => 'vlhkost']) }}
+        </div>
+        <div class="mb-2">
+            URL s klíčem aplikace: {{ route('home-heating.sensor-publish', ['app_key' => config('custom.app_key'), 'room_id' => "id_mistnosti", 'temp' => 'teplota', 'humidity' => 'vlhkost']) }}
+        </div>
+        <h3 class="text-md">Zjištění hodnoty ventilu</h3>
+        <p>ID místnosti odpovídá ID místnosti z karty místnosti.</p>
+        <div>
+            {{ route('home-heating.valves-set-value', ['app_key' => 'klic_aplikace', 'room_id' => "id_mistnosti"]) }}
+        </div>
+        <div class="mb-2">
+            URL s klíčem aplikace: {{ route('home-heating.valves-set-value', ['app_key' => config('custom.app_key'), 'room_id' => "id_mistnosti"]) }}
+        </div>
+        <h3 class="text-md">Odeslání dat ze snímače teploty vody</h3>
+        <p>Publikuje se hodnota teploty vody v topném okruhu.</p>
+        <div>
+            {{ route('home-heating.water-temp', ['app_key' => 'klic_aplikace', 'temp' => "teplota_vody"]) }}
+        </div>
+        <div>
+            URL s klíčem aplikace: {{ route('home-heating.water-temp', ['app_key' => config('custom.app_key'), 'temp' => "teplota_vody"]) }}
+        </div>
     </div>
     @endif
 

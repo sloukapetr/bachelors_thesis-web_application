@@ -101,7 +101,7 @@
         <p>{{ __('Pozor, pokud existuje místnost s příslušným ID jako v URL dotazu, je možné, že dojde k nechtěnému nahrání dat, pak je nutný přímý zásah do databáze.') }}</p>
         <p>Klíč aplikace je nutný pro ověření oprávnění. Jedná se o "app_key" z tabulky výše.</p>
         <h3 class="text-md">Odeslání dat ze snímače teploty</h3>
-        <p>ID místnosti odpovídá ID místnosti z karty místnosti, následuje hodnota teploty a vlhkosti.</p>
+        <p>ID místnosti odpovídá ID místnosti z karty místnosti (pro senzor venkovní teploty použij "outside"), následuje hodnota teploty a vlhkosti.</p>
         <div>
             {{ route('home-heating.sensor-publish', ['app_key' => 'klic_aplikace', 'room_id' => "id_mistnosti", 'temp' => 'teplota', 'humidity' => 'vlhkost']) }}
         </div>

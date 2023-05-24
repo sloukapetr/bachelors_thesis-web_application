@@ -23,7 +23,7 @@
         </x-slot>
 
         <x-slot name="actions">
-            <x-action-message class="mr-3" on="password-set">
+            <x-action-message class="mr-3" on="saved">
                 {{ __('Heslo bylo nastaveno.') }}
             </x-action-message>
 

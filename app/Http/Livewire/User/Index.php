@@ -76,9 +76,11 @@ class Index extends Component
             'password' => Hash::make($this->password),
         ]);
         if ($user) {
-            foreach ($this->room_permission as $room_id => $value) {
-                if ($value == 1) {
-                    $user->rooms()->attach($room_id);
+            if (!empty($this->room_permission)) {
+                foreach ($this->room_permission as $room_id => $value) {
+                    if ($value == 1) {
+                        $user->rooms()->attach($room_id);
+                    }
                 }
             }
             $this->name = null;

@@ -1,5 +1,28 @@
 <div class="space-y-5 mb-5">
 
+    {{-- Prvotni spuštění --}}
+    @if (App\Models\User::count() == 0)
+        <x-messages.warning>
+            <x-slot name="header">
+                {{ __('Instalace webové aplikace') }}
+            </x-slot>
+            <x-slot name="message">
+                <p>
+                    {{ __('Zjistil jsem, že nejspíš tuto webovou aplikaci teprve instaluješ!') }}
+                </p>
+                @if (Illuminate\Support\Facades\Route::currentRouteName() != "register")
+                    <p>
+                        {{ __('V databázi neexistuje žádný uživatel, přejdi na registraci a vytvoř první uživatelský účet!') }}
+                    </p>
+                @else
+                    <p>
+                        {{ __('Uživatel, kterého teď zaregistruješ, bude mít oprávnění správce aplikace.') }}
+                    </p>
+                @endif
+            </x-slot>
+        </x-messages.warning>
+    @endif
+
     {{-- Profil a nastavení --}}
     @if (Auth::user())
         @if (Laravel\Fortify\Features::canManageTwoFactorAuthentication() AND empty(Auth::user()->two_factor_confirmed_at))
@@ -42,7 +65,7 @@
                     <x-slot name="message">
                         <ul class="list-inside list-disc text-sm">
                             <li>{{ __('Vypni tuto možnost pro zabránění registrací nežádoucím uživatelům v nastavení webové stránky.') }}</li>
-                            <li>{{ __('Aktivovat dvoufázové ověřování je možné pouze zásahem do konfigurace webové aplikace v jejich souborech, a to: /config/fortify.php.') }}</li>
+                            <li>{{ __('Vypnutí registrací je možné pouze zásahem do konfigurace webové aplikace v jejich souborech, a to: /config/fortify.php.') }}</li>
                             <li>{{ __('Tuto informaci vidí pouze správce.') }}</li>
                         </ul>
                     </x-slot>

@@ -14,7 +14,7 @@
                     @foreach ($rooms as $room)
                         <label class="flex items-center gap-2 cursor-pointer input-same-sm">
                             <input type="checkbox" class="toggle toggle-primary toggle-sm" wire:model="room_permission.{{$room->id}}">
-                            <span class="label-text">{{ $room->name }} <span class="text-xs text-base-content/60">{{ $room->floor }}. {{ __('floor') }}</span></span>
+                            <span class="label-text">{{ $room->name }} <span class="text-xs text-base-content/60">{{ $room->floor }}. {{ __('patro') }}</span></span>
                         </label>
                         <x-input-error for="room_permission.{{$room->id}}" />
                     @endforeach
@@ -23,7 +23,7 @@
                 <div class="col-span-6">
                     <x-messages.info>
                         <x-slot name="message">
-                            {{ __('There are no rooms where can be assigned and access.') }}
+                            {{ __('Nejsou žádné místnosti, kam by bylo možně přiřadit oprávnění.') }}
                         </x-slot>
                     </x-messages.info>
                 </div>

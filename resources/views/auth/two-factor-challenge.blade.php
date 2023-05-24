@@ -1,15 +1,24 @@
 <x-guest-layout>
     <x-authentication-card>
+
+        {{-- 
         <x-slot name="logo">
             <x-authentication-card-logo />
+        </x-slot>    
+        --}}
+
+        <x-slot name="title">
+            {{ __('Dvoufázové ověření') }}
         </x-slot>
 
+
         <div x-data="{ recovery: false }">
-            <div class="mb-4 text-sm text-gray-600" x-show="! recovery">
-                {{ __('Please confirm access to your account by entering the authentication code provided by your authenticator application.') }}
+            <div class="mb-4 text-sm text-base-content" x-show="! recovery">
+                {{ __('Please confirm access to your account by entering the authentication code provided by your Google Authenticator application.') }}
+                {{ __('Aplikaci lze stáhnout na') }} <a class="link" href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&pli=1" target="_blank">Google Play</a> {{ _('nebo') }} <a class="link" href="https://apps.apple.com/us/app/google-authenticator/id388497605" target="_blank">App Store</a>.
             </div>
 
-            <div class="mb-4 text-sm text-gray-600" x-cloak x-show="recovery">
+            <div class="mb-4 text-sm text-base-content" x-cloak x-show="recovery">
                 {{ __('Please confirm access to your account by entering one of your emergency recovery codes.') }}
             </div>
 
@@ -29,7 +38,7 @@
                 </div>
 
                 <div class="flex items-center justify-end mt-4">
-                    <button type="button" class="text-sm text-gray-600 hover:text-gray-900 underline cursor-pointer"
+                    <button type="button" class="text-sm link link-accent"
                                     x-show="! recovery"
                                     x-on:click="
                                         recovery = true;
@@ -38,7 +47,7 @@
                         {{ __('Use a recovery code') }}
                     </button>
 
-                    <button type="button" class="text-sm text-gray-600 hover:text-gray-900 underline cursor-pointer"
+                    <button type="button" class="text-sm link link-accent"
                                     x-cloak
                                     x-show="recovery"
                                     x-on:click="
